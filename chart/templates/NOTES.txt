@@ -1,3 +1,7 @@
+{{- /*
+NOTES.txt is printed out at the end of a chart install. Customize as appropriate.
+ See https://github.com/kubernetes/helm/blob/master/docs/chart_template_guide/notes_files.md
+*/ -}}
 __CHART__
 
 ## Accessing __CHART__
