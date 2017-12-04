@@ -12,4 +12,12 @@ popd
 
 helm create -p vivint-starter $chartname
 pushd $chartname
+find . -type f -exec sed -i "s/__CHART__/$chartname/g" {} \;
 git init
+
+cat <<ENDSCRIPT > .git/hooks/pre-commit
+#!/bin/sh
+#
+helm lint
+ENDSCRIPT
+chmod +x .git/hooks/pre-commit
